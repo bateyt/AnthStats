@@ -11,7 +11,7 @@
 
 <meta name="author" content="Trey Batey" />
 
-<meta name="date" content="2016-11-14" />
+<meta name="date" content="2016-11-15" />
 
 <title>Exploratory data analysis with the ggvis package</title>
 
@@ -152,7 +152,7 @@ $(document).ready(function () {
 <h1 class="title toc-ignore">Exploratory data analysis with the ggvis package</h1>
 <h3 class="subtitle"><em>Examples with Howells’ Craniometric Data</em></h3>
 <h4 class="author"><em>Trey Batey</em></h4>
-<h4 class="date"><em>2016-11-14</em></h4>
+<h4 class="date"><em>2016-11-15</em></h4>
 
 </div>
 
@@ -183,27 +183,27 @@ $(document).ready(function () {
 ##   [list output truncated]</code></pre>
 <p>Looking at the above ouput, we see that Howells also recorded the estimated sex and population represented for each individual. Let’s take the first measurement, glabella-occipital length (GOL) and plot the distribution as a histogram.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">howells %&gt;%<span class="st"> </span><span class="kw">ggvis</span>(<span class="dt">x =</span> ~GOL) %&gt;%<span class="st"> </span><span class="kw">layer_histograms</span>(opacity:<span class="er">=</span><span class="dv">1</span>/<span class="dv">3</span>)</code></pre></div>
-<div id="plot_id831891204-container" class="ggvis-output-container">
-<div id="plot_id831891204" class="ggvis-output"></div>
+<div id="plot_id841697929-container" class="ggvis-output-container">
+<div id="plot_id841697929" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id831891204_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id831891204" data-renderer="svg">SVG</a>
+<a id="plot_id841697929_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id841697929" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id831891204_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id831891204" data-renderer="canvas">Canvas</a>
+<a id="plot_id841697929_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id841697929" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id831891204_download" class="ggvis-download" data-plot-id="plot_id831891204">Download</a>
+<a id="plot_id841697929_download" class="ggvis-download" data-plot-id="plot_id841697929">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id831891204_spec = {
+var plot_id841697929_spec = {
   "data": [
     {
       "name": ".0/bin1/stack2",
@@ -337,31 +337,31 @@ var plot_id831891204_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id831891204").parseSpec(plot_id831891204_spec);
+ggvis.getPlot("plot_id841697929").parseSpec(plot_id841697929_spec);
 </script>
 <p>We may naturally group our sample by sex and explore how males and females vary with respect to any one or more measurements. Staying with GOL…</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">howells %&gt;%<span class="st"> </span><span class="kw">ggvis</span>(<span class="dt">x =</span> ~GOL) %&gt;%<span class="st"> </span><span class="kw">group_by</span>(Sex) %&gt;%<span class="st"> </span><span class="kw">layer_histograms</span>(<span class="dt">fill =</span> ~Sex, opacity:<span class="er">=</span><span class="dv">1</span>/<span class="dv">3</span>)</code></pre></div>
-<div id="plot_id840014208-container" class="ggvis-output-container">
-<div id="plot_id840014208" class="ggvis-output"></div>
+<div id="plot_id656148170-container" class="ggvis-output-container">
+<div id="plot_id656148170" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id840014208_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id840014208" data-renderer="svg">SVG</a>
+<a id="plot_id656148170_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id656148170" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id840014208_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id840014208" data-renderer="canvas">Canvas</a>
+<a id="plot_id656148170_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id656148170" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id840014208_download" class="ggvis-download" data-plot-id="plot_id840014208">Download</a>
+<a id="plot_id656148170_download" class="ggvis-download" data-plot-id="plot_id656148170">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id840014208_spec = {
+var plot_id656148170_spec = {
   "data": [
     {
       "name": ".0/group_by1/bin2/stack3_flat",
@@ -538,31 +538,31 @@ var plot_id840014208_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id840014208").parseSpec(plot_id840014208_spec);
+ggvis.getPlot("plot_id656148170").parseSpec(plot_id656148170_spec);
 </script>
 <p>Or, we may want to graphically explore the relationship between two variables. For example, let’s look at maximum cranial length (glabella-occipital length, GOL) and maximum cranial breadth (XCB).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">howells %&gt;%<span class="st"> </span><span class="kw">ggvis</span>(<span class="dt">x =</span> ~GOL, <span class="dt">y =</span> ~XCB) %&gt;%<span class="st"> </span><span class="kw">group_by</span>(Sex) %&gt;%<span class="st"> </span><span class="kw">layer_points</span>(<span class="dt">fill =</span> ~Sex, opacity:<span class="er">=</span><span class="dv">1</span>/<span class="dv">3</span>)</code></pre></div>
-<div id="plot_id444980729-container" class="ggvis-output-container">
-<div id="plot_id444980729" class="ggvis-output"></div>
+<div id="plot_id622982530-container" class="ggvis-output-container">
+<div id="plot_id622982530" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id444980729_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id444980729" data-renderer="svg">SVG</a>
+<a id="plot_id622982530_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id622982530" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id444980729_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id444980729" data-renderer="canvas">Canvas</a>
+<a id="plot_id622982530_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id622982530" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id444980729_download" class="ggvis-download" data-plot-id="plot_id444980729">Download</a>
+<a id="plot_id622982530_download" class="ggvis-download" data-plot-id="plot_id622982530">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id444980729_spec = {
+var plot_id622982530_spec = {
   "data": [
     {
       "name": ".0/group_by1_flat",
@@ -729,31 +729,31 @@ var plot_id444980729_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id444980729").parseSpec(plot_id444980729_spec);
+ggvis.getPlot("plot_id622982530").parseSpec(plot_id622982530_spec);
 </script>
 <p>How about exploring the different populations.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">howells %&gt;%<span class="st"> </span><span class="kw">ggvis</span>(<span class="dt">x =</span> ~GOL, <span class="dt">y =</span> ~XCB) %&gt;%<span class="st"> </span><span class="kw">group_by</span>(Population) %&gt;%<span class="st"> </span><span class="kw">layer_points</span>(<span class="dt">fill =</span> ~Population, opacity :<span class="er">=</span><span class="st"> </span><span class="dv">1</span>/<span class="dv">3</span>)</code></pre></div>
-<div id="plot_id116081286-container" class="ggvis-output-container">
-<div id="plot_id116081286" class="ggvis-output"></div>
+<div id="plot_id819850918-container" class="ggvis-output-container">
+<div id="plot_id819850918" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id116081286_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id116081286" data-renderer="svg">SVG</a>
+<a id="plot_id819850918_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id819850918" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id116081286_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id116081286" data-renderer="canvas">Canvas</a>
+<a id="plot_id819850918_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id819850918" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id116081286_download" class="ggvis-download" data-plot-id="plot_id116081286">Download</a>
+<a id="plot_id819850918_download" class="ggvis-download" data-plot-id="plot_id819850918">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id116081286_spec = {
+var plot_id819850918_spec = {
   "data": [
     {
       "name": ".0/group_by1_flat",
@@ -915,12 +915,169 @@ var plot_id116081286_spec = {
     "duration": 250,
     "renderer": "svg",
     "hover_duration": 0,
-    "width": 576,
+    "width": 960,
     "height": 768
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id116081286").parseSpec(plot_id116081286_spec);
+ggvis.getPlot("plot_id819850918").parseSpec(plot_id819850918_spec);
+</script>
+<p>We could take a summary measure (e.g., mean, median) and plot those values, too. All it takes is a little data manipulation with <code>dplyr</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">howells %&gt;%<span class="st"> </span><span class="kw">group_by</span>(Population) %&gt;%<span class="st"> </span><span class="kw">summarise</span>(<span class="dt">avg.BNL =</span> <span class="kw">mean</span>(BNL)) %&gt;%<span class="st"> </span><span class="kw">arrange</span>(avg.BNL) %&gt;%
+<span class="st">  </span><span class="kw">ggvis</span>(<span class="dt">x =</span> ~Population, <span class="dt">y =</span> ~avg.BNL) %&gt;%<span class="st"> </span><span class="kw">layer_points</span>() %&gt;%<span class="st"> </span><span class="kw">add_axis</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">properties =</span> <span class="kw">axis_props</span>(<span class="dt">labels =</span> <span class="kw">list</span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">align =</span> <span class="st">&quot;left&quot;</span>, <span class="dt">fontSize =</span> <span class="dv">10</span>)))</code></pre></div>
+<div id="plot_id964501143-container" class="ggvis-output-container">
+<div id="plot_id964501143" class="ggvis-output"></div>
+<div class="plot-gear-icon">
+<nav class="ggvis-control">
+<a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
+<ul class="ggvis-dropdown">
+<li>
+Renderer: 
+<a id="plot_id964501143_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id964501143" data-renderer="svg">SVG</a>
+ | 
+<a id="plot_id964501143_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id964501143" data-renderer="canvas">Canvas</a>
+</li>
+<li>
+<a id="plot_id964501143_download" class="ggvis-download" data-plot-id="plot_id964501143">Download</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<script type="text/javascript">
+var plot_id964501143_spec = {
+  "data": [
+    {
+      "name": ".0",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "avg.BNL": "number"
+        }
+      },
+      "values": "\"Population\",\"avg.BNL\"\n\"ANDAMAN\",91.6428571428571\n\"BUSHMAN\",93.0777777777778\n\"PERU\",93.2909090909091\n\"SANTA CR\",95.0490196078431\n\"BERG\",95.8348623853211\n\"ATAYAL\",96.3829787234042\n\"DOGON\",96.5858585858586\n\"HAINAN\",97.3012048192771\n\"TASMANIA\",97.3448275862069\n\"PHILLIPI\",98.48\n\"TOLAI\",98.6\n\"TEITA\",98.7228915662651\n\"EGYPT\",98.8198198198198\n\"ZALAVAR\",99.0918367346939\n\"S JAPAN\",99.0989010989011\n\"AUSTRALI\",99.1584158415842\n\"BURIAT\",99.302752293578\n\"N JAPAN\",99.3333333333333\n\"NORSE\",99.5545454545454\n\"ZULU\",99.8514851485149\n\"ARIKARA\",100.753623188406\n\"ANYANG\",101.285714285714\n\"GUAM\",102.631578947368\n\"ESKIMO\",103.314814814815\n\"MORIORI\",103.592592592593\n\"AINU\",103.651162790698\n\"MOKAPU\",104.28\n\"N MAORI\",105\n\"S MAORI\",105.6\n\"EASTER I\",108.348837209302"
+    },
+    {
+      "name": "scale/x",
+      "format": {
+        "type": "csv",
+        "parse": {}
+      },
+      "values": "\"domain\"\n\"ANDAMAN\"\n\"BUSHMAN\"\n\"PERU\"\n\"SANTA CR\"\n\"BERG\"\n\"ATAYAL\"\n\"DOGON\"\n\"HAINAN\"\n\"TASMANIA\"\n\"PHILLIPI\"\n\"TOLAI\"\n\"TEITA\"\n\"EGYPT\"\n\"ZALAVAR\"\n\"S JAPAN\"\n\"AUSTRALI\"\n\"BURIAT\"\n\"N JAPAN\"\n\"NORSE\"\n\"ZULU\"\n\"ARIKARA\"\n\"ANYANG\"\n\"GUAM\"\n\"ESKIMO\"\n\"MORIORI\"\n\"AINU\"\n\"MOKAPU\"\n\"N MAORI\"\n\"S MAORI\"\n\"EASTER I\""
+    },
+    {
+      "name": "scale/y",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "domain": "number"
+        }
+      },
+      "values": "\"domain\"\n90.8075581395349\n109.184136212625"
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "ordinal",
+      "domain": {
+        "data": "scale/x",
+        "field": "data.domain"
+      },
+      "points": true,
+      "sort": false,
+      "range": "width",
+      "padding": 0.5
+    },
+    {
+      "name": "y",
+      "domain": {
+        "data": "scale/y",
+        "field": "data.domain"
+      },
+      "zero": false,
+      "nice": false,
+      "clamp": false,
+      "range": "height"
+    }
+  ],
+  "marks": [
+    {
+      "type": "symbol",
+      "properties": {
+        "update": {
+          "fill": {
+            "value": "#000000"
+          },
+          "size": {
+            "value": 50
+          },
+          "x": {
+            "scale": "x",
+            "field": "data.Population"
+          },
+          "y": {
+            "scale": "y",
+            "field": "data.avg\\.BNL"
+          }
+        },
+        "ggvis": {
+          "data": {
+            "value": ".0"
+          }
+        }
+      },
+      "from": {
+        "data": ".0"
+      }
+    }
+  ],
+  "legends": [],
+  "axes": [
+    {
+      "type": "x",
+      "scale": "x",
+      "orient": "bottom",
+      "layer": "back",
+      "grid": true,
+      "properties": {
+        "labels": {
+          "angle": {
+            "value": 45
+          },
+          "align": {
+            "value": "left"
+          },
+          "fontSize": {
+            "value": 10
+          }
+        }
+      },
+      "title": "Population"
+    },
+    {
+      "type": "y",
+      "scale": "y",
+      "orient": "left",
+      "layer": "back",
+      "grid": true,
+      "title": "avg.BNL"
+    }
+  ],
+  "padding": null,
+  "ggvis_opts": {
+    "keep_aspect": false,
+    "resizable": true,
+    "padding": {},
+    "duration": 250,
+    "renderer": "svg",
+    "hover_duration": 0,
+    "width": 960,
+    "height": 768
+  },
+  "handlers": null
+};
+ggvis.getPlot("plot_id964501143").parseSpec(plot_id964501143_spec);
 </script>
 <p>Next time, we will look at some examples using datasets provided in <em>Statistics for Anthropology</em> <span class="citation">(Madrigal <a href="#ref-madrigal2012statistics">2012</a>)</span>.</p>
 <!---You can also write math expressions, e.g. $Y = X\beta + \epsilon$,

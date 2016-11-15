@@ -60,9 +60,17 @@ howells %>% ggvis(x = ~GOL, y = ~XCB) %>% group_by(Sex) %>% layer_points(fill = 
 
 How about exploring the different populations.
 
-```{r, fig.height=8, fig.align='center', message=FALSE}
+```{r, fig.height=8, fig.width=10, fig.align='center', message=FALSE}
 howells %>% ggvis(x = ~GOL, y = ~XCB) %>% group_by(Population) %>% layer_points(fill = ~Population, opacity := 1/3)
 ```
+
+We could take a summary measure (e.g., mean, median) and plot those values, too. All it takes is a little data manipulation with `dplyr`.
+
+```{r, fig.height=8, fig.width=10, fig.align='center'}
+howells %>% group_by(Population) %>% summarise(avg.BNL = mean(BNL)) %>% arrange(avg.BNL) %>%
+  ggvis(x = ~Population, y = ~avg.BNL) %>% layer_points() %>% add_axis("x", properties = axis_props(labels = list(angle = 45, align = "left", fontSize = 10)))
+```
+
 
 Next time, we will look at some examples using datasets provided in *Statistics for Anthropology* [@madrigal2012statistics].
 
