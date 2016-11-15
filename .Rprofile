@@ -1,0 +1,6 @@
+library(dplyr)
+library(ggvis)
+library(googlesheets)
+library(ggmap)
+library(rgdal)
+library(scales)

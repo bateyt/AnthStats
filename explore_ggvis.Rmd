@@ -1,0 +1,77 @@
+---
+title: "Exploratory data analysis with the ggvis package"
+subtitle: "Examples with Howells' Craniometric Data"
+author: "Trey Batey"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    fig_caption: yes
+    fig_height: 3.5
+    fig_width: 6
+    highlight: haddock
+    theme: flatly
+bibliography: exploreggvis.bib
+biblio-style: amjphysanth.csl
+link-citations: true
+nocite: | 
+  @howells1973cranial, @howells1989skull, @howells1995who
+---
+
+## First steps
+
+First, load a few necessary packages.
+
+```{r, message=FALSE, warning=FALSE, results='hide'}
+packs <- c('dplyr', 'ggvis', 'googlesheets', 'ggmap', 'rgdal', 'scales')
+lapply(packs, require, character.only = TRUE)
+```
+
+## Grab some data
+
+I have a number of datasets stored as Google Sheets. How can I access them with R? Luckily, the `googlesheets` package provides an interface for working with Google Sheets. The code below creates an object (a dataframe called "howells") by retrieving and reading in a spreadsheet with W. W. Howells' craniometric data [@howells1996craniodata].^[Dr. Ben Auerbach provides access to <a href="https://web.utk.edu/~auerbach/HOWL.htm" target="_blank">the digital data files</a>.]
+
+```{r, message=FALSE, warning=FALSE, results='hide'}
+howells <- gs_url('https://docs.google.com/spreadsheets/d/1GJNkJlYmq7MT1QmjRnQE2ptCxHYXt1OqgEfmLaAWCAg/edit?usp=sharing') %>% gs_read()
+```
+
+From 1965 to 1980, Howells collected craniometric data on 2524 human crania representing 28 populations from various parts of the world. He recorded up to 89 measurements per cranium and published results of his analyses in a series of three monographs (see References). We can use the `str()` function to quickly look at the structure of the data
+
+```{r}
+str(howells, list.len = 10)  ## A quick look of the structure of the data
+```
+
+Looking at the above ouput, we see that Howells also recorded the estimated sex and population represented for each individual. Let's take the first measurement, glabella-occipital length (GOL) and plot the distribution as a histogram.
+
+```{r, fig.align='center', message=FALSE}
+howells %>% ggvis(x = ~GOL) %>% layer_histograms(opacity:=1/3)
+```
+
+We may naturally group our sample by sex and explore how males and females vary with respect to any one or more measurements. Staying with GOL...
+
+```{r, fig.align='center', message=FALSE}
+howells %>% ggvis(x = ~GOL) %>% group_by(Sex) %>% layer_histograms(fill = ~Sex, opacity:=1/3)
+```
+
+Or, we may want to graphically explore the relationship between two variables. For example, let's look at maximum cranial length (glabella-occipital length, GOL) and maximum cranial breadth (XCB).
+
+```{r, fig.align='center', message=FALSE}
+howells %>% ggvis(x = ~GOL, y = ~XCB) %>% group_by(Sex) %>% layer_points(fill = ~Sex, opacity:=1/3)
+```
+
+How about exploring the different populations.
+
+```{r, fig.height=8, fig.align='center', message=FALSE}
+howells %>% ggvis(x = ~GOL, y = ~XCB) %>% group_by(Population) %>% layer_points(fill = ~Population, opacity := 1/3)
+```
+
+Next time, we will look at some examples using datasets provided in *Statistics for Anthropology* [@madrigal2012statistics].
+
+<!---You can also write math expressions, e.g. $Y = X\beta + \epsilon$,
+footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(iris, 10))
+```
+
+-->
+## References
